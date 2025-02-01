@@ -10,9 +10,10 @@
 	- header.html
 	- index.html
 
-[GIN-debug] GET    /api/videos               --> main.main.func1 (2 handlers)
-[GIN-debug] POST   /api/videos               --> main.main.func2 (2 handlers)
-[GIN-debug] GET    /view/videos              --> github.com/pragmaticreviews/golang-gin-poc/controller.VideoController.ShowAll-fm (1 handlers)
+[GIN-debug] GET    /api/videos               --> main.main.func1 (5 handlers)
+[GIN-debug] POST   /api/videos               --> main.main.func2 (5 handlers)
+[GIN-debug] GET    /view/videos              --> github.com/pragmaticreviews/golang-gin-poc/controller.VideoController.ShowAll-fm (5 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :5000
+::1 - [01 Feb 25 19:30 MSK] POST /api/videos 200 1.7516ms 

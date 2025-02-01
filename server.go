@@ -9,6 +9,7 @@ import (
 	"github.com/pragmaticreviews/golang-gin-poc/controller"
 	"github.com/pragmaticreviews/golang-gin-poc/middlewares"
 	"github.com/pragmaticreviews/golang-gin-poc/service"
+	gindump "github.com/tpkeeper/gin-dump"
 )
 
 var (
@@ -31,10 +32,10 @@ func main() {
 
 	server.LoadHTMLGlob("templates/*.html")
 
-	// server.Use(gin.Recovery(), middlewares.Logger(),
-	// 	middlewares.BasicAuth(), gindump.Dump())
+	server.Use(gin.Recovery(), middlewares.Logger(),
+		middlewares.BasicAuth(), gindump.Dump())
 
-	apiRoutes := server.Group("/api", middlewares.BasicAuth())
+	apiRoutes := server.Group("/api")
 	{
 		apiRoutes.GET("/videos", func(ctx *gin.Context) {
 			ctx.JSON(200, videoController.FindAll())
